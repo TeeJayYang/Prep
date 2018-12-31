@@ -18,11 +18,11 @@ def _partition(nums, high, low):
         if nums[i] <= pivot:
             nums[pivotIndex], nums[i] = nums[i], nums[pivotIndex]
             pivotIndex += 1
-    
+
     # Move the pivot to the right spot
     nums[pivotIndex], nums[high] = nums[high], nums[pivotIndex]
     return pivotIndex
-    
+
 def _qs(nums, high, low):
     if (high <= low):
         return
