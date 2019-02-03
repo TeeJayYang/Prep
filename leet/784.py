@@ -20,6 +20,7 @@ class Solution:
             foo(lower,i+1)
         foo(S,0)
         return list(ret)
+
 ## non recursive solution
 class Solution:
     def letterCasePermutation(self, S):
