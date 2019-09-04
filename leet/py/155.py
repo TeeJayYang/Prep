@@ -23,7 +23,7 @@ class MinStack:
         :rtype: void
         """
         self.stack.pop()
-        
+
 
     def top(self):
         """

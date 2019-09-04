@@ -15,14 +15,14 @@ class Solution(object):
                 digits[i] = 0
                 carry = 1
             else:
-                digits[i] += 1 
+                digits[i] += 1
                 carry = 0
                 break
         if carry:
             digits.append(1)
         digits.reverse()
-        return digits 
-    
+        return digits
+
     # Alternatively,
     def plusOne2(self, digits):
         return map(int,list(str(int("".join(map(str, digits)))+1)))

@@ -9,12 +9,12 @@ When a car arrives at the front of the queue, the driver
 can choose to drive to any dispenser not occupied by
 another car. Suppose that the fuel demand is D litres for
 this car. The driver must choose a dispenser that has at
-least D liters of fuel. If all unoccupied dispensers have
-less than D liters, the dirver must wait for some other
+least D litres of fuel. If all unoccupied dispensers have
+less than D litres, the dirver must wait for some other
 car to finish tanking up. If all dispensers are unoccupied,
-and none has at least D liters, the driver is unable to
+and none has at least D litres, the driver is unable to
 refuel the car and it blocks the queue indefinitely. If
-more than one unoccupied dispenser has at least D liters,
+more than one unoccupied dispenser has at least D litres,
 the driver chooses the one labeled with the smallest letter
 among them.
 

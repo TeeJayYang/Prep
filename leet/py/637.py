@@ -8,7 +8,7 @@
 class Solution:
     def averageOfLevels(self, root):
         """
-        :type root: TreeNode 
+        :type root: TreeNode
         :rtype: List[float]
         """
         l = []
