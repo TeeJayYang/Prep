@@ -3,7 +3,6 @@ def twosum(nums, target):
     for i in nums:
         if target - i in comp:
             return (i, target - i, i * (target - i))
-            break
         comp.add(i)
 
 
