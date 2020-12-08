@@ -33,20 +33,22 @@ with open('input') as file:
 #     return holders
 
 
-def find_holders2(bag, lookup, holders={}):
+def find_holders2(bag, lookup, holders):
     if bag in holders:
         return (holders, holders[bag])
     immediate_holders = lookup[bag]
     total = 0
     for bag, num_bags in immediate_holders.items():
-        bag_val = find_holders2(bag, lookup)[1]
+        bag_val = find_holders2(bag, lookup, holders)[1]
         holders[bag] = bag_val
         total += bag_val * num_bags
     return (holders, total + sum(immediate_holders.values()))
 
 
 # part 1
-print(len(find_holders2('shiny gold', rev_lookup)[0]))
+holders = {}
+print(len(find_holders2('shiny gold', rev_lookup, holders)[0]))
 
 # part 2
-print(find_holders2('shiny gold', lookup)[1])
+holders = {}
+print(find_holders2('shiny gold', lookup, holders)[1])
