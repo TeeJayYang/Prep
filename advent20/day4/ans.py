@@ -29,7 +29,7 @@ def validate_passport(passport):
             height = int(match.group(1))
             cm_in = match.group(2)
             if (cm_in == 'cm' and not (150 <= height <= 193)
-                    or cm_in == 'in' and not (59 <= height < 76)):
+                    or cm_in == 'in' and not (59 <= height <= 76)):
                 return False
         elif k == 'hcl':
             if not re.match(r'#([0-9a-f]){6}', v):
