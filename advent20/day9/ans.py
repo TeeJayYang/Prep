@@ -12,7 +12,7 @@ def first_invalid(nums, preamble_len):
 
     for index, num in enumerate(nums):
         sums.append(set())
-        valid = False or index < preamble_len
+        valid = index < preamble_len
         for i in range(1, min(preamble_len, index) + 1):
             if num in sums[index - i]:
                 valid = True

@@ -1,5 +1,3 @@
-from math import comb
-
 adapters = []
 with open('input') as file:
     adapters.append(0)
