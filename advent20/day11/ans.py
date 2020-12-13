@@ -63,7 +63,7 @@ def change_state(seats, part1):
                         continue
                     elif new_seat == '#':
                         occupied_count += 1
-                if occupied_count > 4 or part1 and occupied_count == 5:
+                if occupied_count > 4 or part1 and occupied_count == 4:
                     new_row.append('L')
                     changed = True
                 else:
