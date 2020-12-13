@@ -63,8 +63,10 @@ def execute2(instructions):
     return pos
 
 
+# part1
 final_pos = execute(instructions)
 print(abs(final_pos.x) + abs(final_pos.y))
 
+# part 2
 final_pos = execute2(instructions)
 print(abs(final_pos.x) + abs(final_pos.y))
