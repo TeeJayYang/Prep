@@ -6,8 +6,8 @@ instructions = []
 with open('input') as file:
     instructions = [line.strip() for line in file.readlines()]
 
-bitmask_pattern = re.compile(r'mask = ((?:X|1|0){36})')
-memset_pattern = re.compile(r'mem\[([0-9]+)\] = ((?:[0-9])+)')
+bitmask_pattern = re.compile(r'mask = ([X|1|0]{36})')
+memset_pattern = re.compile(r'mem\[([0-9]+)\] = ([0-9]+)')
 
 
 def execute(instructions):
