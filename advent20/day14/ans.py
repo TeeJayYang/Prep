@@ -36,7 +36,11 @@ def execute(instructions):
 
 def find_permutations(num, positions):
     all_nums = []
+
+    # cartesion product of (0,1), to the power of repeat
+    # aka gives all possible permutations of 0,1 of length repeat
     prod = product((0, 1), repeat=len(positions))
+
     for permutation in prod:
         temp = num
         for x_idx, val in zip(positions, permutation):
