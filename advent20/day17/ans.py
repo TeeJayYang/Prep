@@ -1,12 +1,12 @@
-space3d = {}
-space4d = {}
+space3d = set()
+space4d = set()
 
 with open('input') as file:
     for x, line in enumerate(file):
         for y, cube in enumerate(line.strip()):
             if cube == '#':
-                space3d[x, y, 0] = True
-                space4d[x, y, 0, 0] = True
+                space3d.add((x, y, 0))
+                space4d.add((x, y, 0, 0))
 
 
 def get_neighbours(x, y, z, w=None):
@@ -33,7 +33,7 @@ def get_neighbours(x, y, z, w=None):
 def count_active_neighbours(space, neighbours):
     count = 0
     for n in neighbours:
-        if space.get(n, False):
+        if n in space:
             count += 1
     return count
 
@@ -48,30 +48,34 @@ def should_flip(active, active_neighbours):
 
 def execute(space):
     flip = set()
-    for coord, cube in space.items():
+    for coord in space:
+        # active cubes
         neighbours = get_neighbours(*coord)
         active_neighbours = count_active_neighbours(space, neighbours)
-        if cube and should_flip(cube, active_neighbours):
+        if active_neighbours not in {2, 3}:
             flip.add(coord)
 
-        # check if neighbour should be flipped too
+        # check if inactive neighbour should be flipped too
         for n in neighbours:
-            if space.get(n, False):
+            if n in space:
                 continue
             neighbours = get_neighbours(*n)
             active_neighbours = count_active_neighbours(space, neighbours)
-            if should_flip(space.get(n, False), active_neighbours):
+            if active_neighbours == 3:
                 flip.add(n)
 
     for coord in flip:
-        space[coord] = not space.get(coord, False)
+        if coord in space:
+            space.remove(coord)
+        else:
+            space.add(coord)
 
 
 def count_active(space, cycles):
     for i in range(cycles):
         execute(space)
 
-    return list(space.values()).count(True)
+    return len(space)
 
 
 # part 1
