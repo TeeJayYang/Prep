@@ -55,7 +55,7 @@ def execute(space):
         if active_neighbours not in {2, 3}:
             flip.add(coord)
 
-        # check if inactive neighbour should be flipped too
+        # check if inactive neighbours should be flipped too
         for n in neighbours:
             if n in space:
                 continue
