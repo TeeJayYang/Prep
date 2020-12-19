@@ -2,13 +2,11 @@ space3d = {}
 space4d = {}
 
 with open('input') as file:
-    x = 0
-    for line in file:
+    for x, line in enumerate(file):
         for y, cube in enumerate(line.strip()):
             if cube == '#':
                 space3d[x, y, 0] = True
                 space4d[x, y, 0, 0] = True
-        x += 1
 
 
 def get_neighbours(x, y, z, w=None):
