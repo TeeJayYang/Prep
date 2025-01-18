@@ -1,5 +1,6 @@
 from math import inf
 from heapq import heappush, heappop
+from collections import deque
 
 DIR = [
     (0, 1),
